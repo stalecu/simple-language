@@ -8,5 +8,5 @@ in
     write 1;
   else
     write 2;
-  end
+  fi;
 end

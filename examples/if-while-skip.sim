@@ -1,5 +1,5 @@
 let
-  integer n, x;
+  integer n, x.
 in
   read n;
   if n < 10 then

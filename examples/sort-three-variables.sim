@@ -1,5 +1,5 @@
 let
-  integer x, y, z, temp;
+  integer x, y, z, temp.
 in
   read x;
   read y;
@@ -9,17 +9,19 @@ in
     temp := x;
     x := y;
     y := temp;
-  end;
+  else skip; fi;
+
   if x > z then
     temp := z;
     z := x;
     x := temp;
-  end;
+  else skip; fi;
+  
   if y > z then
     temp := y;
     y := z;
     z := temp;
-  end;
+  else skip; fi;
 
   write x, " ", y, " ", z;
 end

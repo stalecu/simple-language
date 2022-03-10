@@ -1,5 +1,5 @@
 let
-  integer s1, s2, i, n;
+  integer s1, s2, i, n.
 in
   read n;
 
