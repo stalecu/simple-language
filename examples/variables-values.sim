@@ -1,0 +1,5 @@
+let
+  integer n, x.
+in
+  x := 0; n := 1;
+end

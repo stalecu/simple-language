@@ -1,0 +1,10 @@
+let
+  integer n, x.
+in
+  n := 0;
+  if n > 0 then
+    write "n is greater than 0";
+  else
+    write "n is less than or equal to 0";
+  fi;
+end

@@ -1,0 +1,25 @@
+let
+  integer x, y, z, temp;
+in
+  read x;
+  read y;
+  read z;
+
+  if x > y then
+    temp := x;
+    x := y;
+    y := temp;
+  end;
+  if x > z then
+    temp := z;
+    z := x;
+    x := temp;
+  end;
+  if y > z then
+    temp := y;
+    y := z;
+    z := temp;
+  end;
+
+  write x, " ", y, " ", z;
+end

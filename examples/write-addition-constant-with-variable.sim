@@ -1,0 +1,7 @@
+let
+  integer n, x.
+in
+  read x;
+  skip;
+  write 123 + x;
+end

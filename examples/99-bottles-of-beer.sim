@@ -1,0 +1,22 @@
+let
+  integer i.
+in
+  i := 99;
+  while i > -1 do
+
+    if i = 0 then
+      write "No more bottles of beer on the wall, no more bottles of beer.";
+      write "Go to the store and buy some more, 99 bottles of beer on the wall.";
+    else skip; end;
+
+    if i = 1 then
+      write "1 bottle of beer on the wall, 1 bottle of beer.";
+      write "Take one down and pass it around, no more bottles of beer on the wall.";
+    else
+      write i, " bottles of beer on the wall, ", i, " bottles of beer.";
+      write "Take one down and pass it around, ", i - 1, " bottles of beer on the wall.";
+    end;
+
+    i := i - 1;
+  end;
+end

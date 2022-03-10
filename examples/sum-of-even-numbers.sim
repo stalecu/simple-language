@@ -1,0 +1,16 @@
+let
+  integer n, s.
+in
+  read n;
+  write n;
+  s := 0;
+  while n > 0 do
+    n := n - 1;
+    write n;
+    if (n / 2) * 2 = n then
+      s := s + n;
+    else
+      skip;
+    fi;
+  end;
+end

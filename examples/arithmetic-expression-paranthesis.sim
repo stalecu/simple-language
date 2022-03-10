@@ -1,0 +1,6 @@
+let
+in
+  skip;
+  skip;
+  write (10 * 2) ^ 2 + 5 ^ 2 * (20 + 4) - 1 + 50 / 2;
+end

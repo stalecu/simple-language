@@ -1,0 +1,9 @@
+let
+in
+  skip;
+  if 1 = 2 then
+    write 1;
+  else
+    write 2;
+  fi;
+end

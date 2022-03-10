@@ -1,0 +1,15 @@
+let
+  integer s1, s2, i, n;
+in
+  read n;
+
+  s1 := 0;
+  s2 := 0;
+  i := 0;
+  while i < n + 1 do
+    s1 := s1 + i ^ 2;
+  end;
+  s2 := n * (n + 1) * (2*n + 1) / 6;
+  write s1;
+  write s2;
+end

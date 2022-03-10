@@ -1,0 +1,12 @@
+let
+  integer n, x.
+in
+  skip;
+  n := 0;
+  x := 1;
+  if n = 0 then
+    write 1;
+  else
+    write 2;
+  end
+end

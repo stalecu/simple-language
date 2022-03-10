@@ -1,0 +1,22 @@
+let
+  integer a, b, c, max.
+in
+  read a;
+  read b;
+  read c;
+  if a > b then
+    if a > c then
+      max := a;
+    else
+      max := c;
+    fi;
+  else
+    if b > c then
+      max := b;
+    else
+      max := c;
+    fi;
+  fi;
+
+  write max;
+end

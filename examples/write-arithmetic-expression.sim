@@ -1,0 +1,6 @@
+let
+in
+  skip;
+  skip;
+  write 10 * 2 + 5 * 24;
+end

@@ -1,0 +1,13 @@
+let
+  integer s1, s2, i.
+in
+  s1 := 0;
+  s2 := 0;
+  i := 0;
+  while i < 101 do
+    s1 := s1 + i;
+  end;
+  s2 := (100 * 101) / 2;
+  write s1;
+  write s2;
+end

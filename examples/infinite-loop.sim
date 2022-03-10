@@ -1,0 +1,6 @@
+let
+in
+  while 1 do
+    write 1;
+  end;
+end

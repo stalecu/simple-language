@@ -1,0 +1,19 @@
+let
+	integer n, fib, prev, tmp.
+in
+	n := 0;
+	fib := 1;
+	prev := 1;
+	while n < 46 do
+		if n < 2 then
+			n := n + 1;
+			write n;
+		else
+			tmp := fib;
+			fib := fib + prev;
+			prev := tmp;
+		fi;
+	write fib;
+	n := n + 1;
+	end;
+end
