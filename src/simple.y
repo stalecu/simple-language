@@ -8,3 +8,39 @@
 %left '-' '+'
 %left '*' '/'
 %right '^'
+%%
+program: LET declarations IN commands END ;
+
+declarations: /* empty */
+| INTEGER id_seq IDENTIFIER '.'
+;
+
+id_seq: /* empty */
+| id_seq IDENTIFIER ','
+;
+
+commands: /* empty */
+| commands command ';'
+;
+
+command: SKIP
+| READ IDENTIFIER
+| WRITE exp
+| IDENTIFIER ASSIGNOP exp
+| IF exp THEN commands ELSE commands FI
+| WHILE exp DO commands END
+;
+
+exp: NUMBER
+| IDENTIFIER 
+| exp '<' exp
+| exp '>' exp
+| exp '=' exp
+| exp '+' exp
+| exp '-' exp
+| exp '*' exp
+| exp '/' exp
+| exp '^' exp
+| '(' exp ')'
+;
+%%
