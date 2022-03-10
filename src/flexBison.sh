@@ -4,4 +4,4 @@ bison -dv ./simple.y
 gcc -c ./simple.tab.c
 flex ./simple.lex
 gcc -c ./lex.yy.c
-gcc -o ../simple ./simple.tab.o ./lex.yy.o -lm -lfl
+gcc -o ../simple ./simple.tab.o ./lex.yy.o -lm -lfl # Install libfl{2,-devel?} on Fedora
