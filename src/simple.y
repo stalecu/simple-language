@@ -10,7 +10,7 @@
 %token IF WHILE
 %token LET INTEGER IN
 %token SKIP THEN ELSE FI DO END
-%token INTEGER READ WRITE LET IN
+%token READ WRITE
 %token ASSIGNOP
 
 %left '-' '+'
