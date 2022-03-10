@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "./ST.h"
+#include "./SM.h"
 int errors;
 #define YYDEBUG 1
 
@@ -88,7 +89,8 @@ main(int argc, char* argv[]) {
 
     printf("Parse completed!\n");
     if (errors == 0) {
-        printf("Syntactically valid!\n");
+        print_code();
+        fetch_execute_cycle();
     }
 }
 yyerror(char *s) {
