@@ -53,3 +53,7 @@ main(int argc, char* argv[]) {
     errors = 0;
     yyparse();
 }
+yyerror(char *s) {
+    errors++;
+    printf("%s\n", s);
+}
