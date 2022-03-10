@@ -44,3 +44,12 @@ exp: NUMBER
 | '(' exp ')'
 ;
 %%
+int errors;
+main(int argc, char* argv[]) {
+    extern FILE *yyin;
+    ++argv; --argc;
+    yyin = fopen(argv[0], 'r');
+    yydebug = 1;
+    errors = 0;
+    yyparse();
+}
