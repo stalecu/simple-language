@@ -60,9 +60,9 @@ main(int argc, char* argv[]) {
     errors = 0;
     yyparse();
 
-    printf("Parse completed!");
+    printf("Parse completed!\n");
     if (errors == 0) {
-        printf("Syntactically valid!");
+        printf("Syntactically valid!\n");
     }
 }
 yyerror(char *s) {
