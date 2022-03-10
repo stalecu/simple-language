@@ -1342,7 +1342,7 @@ yyreturn:
 main(int argc, char* argv[]) {
     extern FILE *yyin;
     ++argv; --argc;
-    yyin = fopen(argv[0], 'r');
+    yyin = fopen(argv[0], "r");
     errors = 0;
     yyparse();
 
