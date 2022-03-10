@@ -1,9 +1,17 @@
-%start program
-%token LET INTEGER IN
-%token DO ELSE END FI IF READ SKIP THEN WHILE WRITE
+%{
+    #include <stdio.h>
+    int errors;
+    #define YYDEBUG 1
+%}
 
+%start program
 %token NUMBER
-%token IDENTIFIER ASSIGNOP
+%token IDENTIFIER
+%token IF WHILE
+%token LET INTEGER IN
+%token SKIP THEN ELSE FI DO END
+%token INTEGER READ WRITE LET IN
+%token ASSIGNOP
 
 %left '-' '+'
 %left '*' '/'
@@ -44,14 +52,18 @@ exp: NUMBER
 | '(' exp ')'
 ;
 %%
-int errors;
+
 main(int argc, char* argv[]) {
     extern FILE *yyin;
     ++argv; --argc;
     yyin = fopen(argv[0], 'r');
-    yydebug = 1;
     errors = 0;
     yyparse();
+
+    printf("Parse completed!");
+    if (errors == 0) {
+        printf("Syntactically valid!");
+    }
 }
 yyerror(char *s) {
     errors++;
