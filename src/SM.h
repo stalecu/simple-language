@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 enum code_ops {
   HALT,
   STORE,
@@ -111,7 +112,7 @@ void fetch_execute_cycle() {
       top--;
       break;
     default:
-      printf("%sInternal Error: Memory Dump\n");
+      printf("%s", "Internal Error: Memory Dump\n");
       break;
     }
   } while (ir.op != HALT);

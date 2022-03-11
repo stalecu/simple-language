@@ -58,25 +58,36 @@ extern int yydebug;
     IDENTIFIER = 259,              /* IDENTIFIER  */
     IF = 260,                      /* IF  */
     WHILE = 261,                   /* WHILE  */
-    LET = 262,                     /* LET  */
-    INTEGER = 263,                 /* INTEGER  */
-    IN = 264,                      /* IN  */
-    SKIP = 265,                    /* SKIP  */
-    THEN = 266,                    /* THEN  */
-    ELSE = 267,                    /* ELSE  */
-    FI = 268,                      /* FI  */
-    DO = 269,                      /* DO  */
-    END = 270,                     /* END  */
-    READ = 271,                    /* READ  */
-    WRITE = 272,                   /* WRITE  */
-    ASSIGNOP = 273                 /* ASSIGNOP  */
+    SKIP = 262,                    /* SKIP  */
+    THEN = 263,                    /* THEN  */
+    ELSE = 264,                    /* ELSE  */
+    FI = 265,                      /* FI  */
+    DO = 266,                      /* DO  */
+    END = 267,                     /* END  */
+    INTEGER = 268,                 /* INTEGER  */
+    READ = 269,                    /* READ  */
+    WRITE = 270,                   /* WRITE  */
+    LET = 271,                     /* LET  */
+    IN = 272,                      /* IN  */
+    ASSGNOP = 273                  /* ASSGNOP  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+union YYSTYPE
+{
+#line 43 "./simple.y"
+
+int intval;
+char *id;
+struct lbs *lbls;
+
+#line 88 "simple.tab.h"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

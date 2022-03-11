@@ -475,9 +475,11 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "./simple.lex"
 #line 2 "./simple.lex"
-    #include "./simple.tab.h"    
-#line 479 "lex.yy.c"
-#line 480 "lex.yy.c"
+#include <string.h>
+#include <stdlib.h>
+#include "simple.tab.h" 
+#line 481 "lex.yy.c"
+#line 482 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -694,10 +696,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "./simple.lex"
+#line 10 "./simple.lex"
 
-
-#line 700 "lex.yy.c"
+#line 701 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -756,101 +757,103 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "./simple.lex"
-{ return(ASSIGNOP);    }
+#line 11 "./simple.lex"
+{ return(ASSGNOP); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "./simple.lex"
-{ return(NUMBER);      }
+#line 12 "./simple.lex"
+{ yylval.intval = atoi( yytext );
+return(NUMBER); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "./simple.lex"
-{ return(DO);          }
+#line 14 "./simple.lex"
+{ return(DO); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "./simple.lex"
-{ return(ELSE);        }
+#line 15 "./simple.lex"
+{ return(ELSE); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "./simple.lex"
-{ return(END);         }
+#line 16 "./simple.lex"
+{ return(END); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "./simple.lex"
-{ return(FI);          }
+#line 17 "./simple.lex"
+{ return(FI); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "./simple.lex"
-{ return(IF);          }
+#line 18 "./simple.lex"
+{ return(IF); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 15 "./simple.lex"
-{ return(IN);          }
+#line 19 "./simple.lex"
+{ return(IN); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 16 "./simple.lex"
-{ return(INTEGER);     }
+#line 20 "./simple.lex"
+{ return(INTEGER); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 17 "./simple.lex"
-{ return(LET);         }
+#line 21 "./simple.lex"
+{ return(LET); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 18 "./simple.lex"
-{ return(READ);        }
+#line 22 "./simple.lex"
+{ return(READ); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 19 "./simple.lex"
-{ return(SKIP);        }
+#line 23 "./simple.lex"
+{ return(SKIP); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 20 "./simple.lex"
-{ return(THEN);        }
+#line 24 "./simple.lex"
+{ return(THEN); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 21 "./simple.lex"
-{ return(WHILE);       }
+#line 25 "./simple.lex"
+{ return(WHILE); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 22 "./simple.lex"
-{ return(WRITE);       }
+#line 26 "./simple.lex"
+{ return(WRITE); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 23 "./simple.lex"
-{ return(IDENTIFIER);  }
+#line 27 "./simple.lex"
+{ yylval.id = (char *) strdup(yytext);
+return(IDENTIFIER); }
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 24 "./simple.lex"
-/* Consume all spaces, tabs and newlines. */
+#line 29 "./simple.lex"
+/* eat up whitespace */
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 25 "./simple.lex"
-{ return(yytext[0]);   }
+#line 30 "./simple.lex"
+{ return(yytext[0]); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 26 "./simple.lex"
+#line 31 "./simple.lex"
 ECHO;
 	YY_BREAK
-#line 853 "lex.yy.c"
+#line 856 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1855,5 +1858,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 26 "./simple.lex"
+#line 31 "./simple.lex"
 
+int yywrap(void){}
